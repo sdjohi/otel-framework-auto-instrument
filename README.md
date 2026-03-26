@@ -1,142 +1,64 @@
 # OtelSqlDemo — .NET Framework 4.8 + OTel Auto-Instrumentation + SqlClient
 
-A self-hosted ASP.NET Web API (.NET Framework 4.8) that queries **SQL Server LocalDB** via
-`System.Data.SqlClient`. It uses **OpenTelemetry .NET auto-instrumentation** (zero-code) to
-capture SQL traces and export them to the **Grafana LGTM** stack (Grafana + Tempo + Loki + Prometheus).
+Self-hosted ASP.NET Web API (.NET Framework 4.8) that queries SQL Server LocalDB via `System.Data.SqlClient`, instrumented with **OpenTelemetry .NET auto-instrumentation** (zero-code). Traces, logs, and metrics are exported to **Grafana LGTM** (Tempo + Loki + Prometheus).
 
-## Goal
-
-Verify that OTel auto-instrumentation captures **SQL statements** (`db.query.text`) in traces
-when using `System.Data.SqlClient` on .NET Framework.
-
-> **Key setting:** `OTEL_DOTNET_AUTO_SQLCLIENT_NETFX_ILREWRITE_ENABLED=true` enables IL rewriting
-> of `SqlCommand` on .NET Framework so that `CommandText` is available for all queries — not just
-> stored procedures. Without this, `db.query.text` is empty for raw SQL.
-
-## Prerequisites
-
-| Requirement | Notes |
-|---|---|
-| **.NET 4.8 targeting pack** | Comes with Visual Studio |
-| **.NET SDK 6+** | For `dotnet build` with SDK-style csproj targeting net48 |
-| **SQL Server LocalDB** | Pre-installed with Visual Studio; or install [SQL Server Express LocalDB](https://learn.microsoft.com/en-us/sql/database-engine/configure-windows/sql-server-express-localdb) |
-| **Docker** | For the Grafana LGTM container |
-| **PowerShell 5.1+** | For the automation scripts |
+> This app uses OWIN self-host + LocalDB for simplicity. For IIS-hosted apps the instrumentation is identical but config is more involved — see [IIS notes](#iis-notes) below.
 
 ## Quick Start
 
-### 1. Build the application
-
 ```powershell
-dotnet build
+dotnet build                # 1. Build
+docker compose up -d        # 2. Start Grafana LGTM (localhost:3000, OTLP on :4318)
+.\install-otel.ps1          # 3. Download OTel auto-instrumentation
+.\run-with-otel.ps1         # 4. Launch app with profiler (API on localhost:9000)
+.\test-endpoints.ps1        # 5. Generate traffic (separate terminal)
 ```
 
-### 2. Start the observability backend
+Then open http://localhost:3000 → Explore → **Tempo** → Service Name = `OtelSqlDemo`.
 
-```powershell
-docker compose up -d
-```
+### Prerequisites
 
-This starts `grafana/otel-lgtm` with:
-- **Grafana** at http://localhost:3000 (login: `admin` / `admin`)
-- **OTLP HTTP** receiver at http://localhost:4318
+.NET 4.8 targeting pack, .NET SDK 6+, [SQL Server LocalDB](https://learn.microsoft.com/en-us/sql/database-engine/configure-windows/sql-server-express-localdb), Docker, PowerShell 5.1+.
 
-### 3. Install OpenTelemetry auto-instrumentation
+## Key Settings
 
-```powershell
-.\install-otel.ps1
-```
+| Variable | Value | Why |
+|---|---|---|
+| `OTEL_DOTNET_AUTO_SQLCLIENT_NETFX_ILREWRITE_ENABLED` | `true` | Captures raw SQL query text (`db.query.text`) — without this, only stored proc names are recorded |
+| `OTEL_DOTNET_AUTO_LOGS_ENABLE_NLOG_BRIDGE` | `true` | Forwards NLog records to OTLP (disabled by default) |
+| `OTEL_DOTNET_AUTO_LOGS_INCLUDE_FORMATTED_MESSAGE` | `true` | Includes the rendered message body in exported logs |
+| `OTEL_EXPORTER_OTLP_PROTOCOL` | `http/protobuf` | gRPC is **not supported** on .NET Framework |
 
-Downloads the official OTel .NET auto-instrumentation binaries into `.\otel-dotnet-auto\`.
-
-### 4. Run the app with instrumentation
-
-```powershell
-.\run-with-otel.ps1
-```
-
-This sets all the required CLR Profiler and OTel environment variables, then launches the app.
-The API will be available at http://localhost:9000.
-
-### 5. Generate traffic
-
-In a separate terminal:
-
-```powershell
-.\test-endpoints.ps1
-```
-
-### 6. View traces in Grafana
-
-1. Open http://localhost:3000
-2. Go to **Explore** → select **Tempo** as the data source
-3. Search by **Service Name** = `OtelSqlDemo`
-4. Click on a trace to see its spans
-
-## What to look for
-
-In the trace details, you should see:
-
-- **HTTP spans** — one per API request (`GET /api/products`, etc.)
-- **SQL spans** (child of the HTTP span) with attributes:
-  - `db.system` = `mssql`
-  - `db.name` = `OtelSqlDemo`
-  - `db.query.text` = the actual SQL statement (e.g., `SELECT Id, Name, Price, CreatedAt FROM Products ORDER BY Id`)
-  - `server.address` = `(LocalDB)\MSSQLLocalDB`
-
-### Testing without IL rewrite
-
-To verify the impact of `OTEL_DOTNET_AUTO_SQLCLIENT_NETFX_ILREWRITE_ENABLED`:
-
-1. In `run-with-otel.ps1`, change the value to `"false"`
-2. Restart the app and send more requests
-3. Observe that `db.query.text` is **missing** for raw SQL queries (only present for stored procedures)
-
-## Project Structure
-
-```
-├── OtelSqlDemo.csproj              # .NET Framework 4.8 SDK-style project
-├── OtelSqlDemo.sln                 # Solution file
-├── Program.cs                      # OWIN self-host entry point (port 9000)
-├── Startup.cs                      # OWIN/WebApi route configuration
-├── DatabaseInitializer.cs          # LocalDB database & table creation + seeding
-├── Controllers/
-│   └── ProductsController.cs       # Web API controller with raw SqlClient queries
-├── docker-compose.yml              # Grafana LGTM (Grafana + Tempo + Loki + Prometheus)
-├── install-otel.ps1                # Downloads OTel .NET auto-instrumentation
-├── run-with-otel.ps1               # Launches app with CLR Profiler & OTel env vars
-├── test-endpoints.ps1              # Generates HTTP traffic for trace collection
-└── README.md                       # This file
-```
+All env vars are set in `run-with-otel.ps1`. See the full list in the [OTel .NET config docs](https://opentelemetry.io/docs/zero-code/net/configuration/).
 
 ## API Endpoints
 
 | Method | URL | Description |
 |---|---|---|
 | GET | `/api/products` | List all products |
-| GET | `/api/products/{id}` | Get a single product by ID |
-| POST | `/api/products` | Create a product (`{"Name":"...","Price":12.99}`) |
+| GET | `/api/products/{id}` | Get product by ID |
+| POST | `/api/products` | Create product (`{"Name":"...","Price":12.99}`) |
 
-## Key OTel Environment Variables
+## IIS Notes
 
-| Variable | Value | Purpose |
-|---|---|---|
-| `COR_ENABLE_PROFILING` | `1` | Enables CLR Profiler (required for .NET Framework) |
-| `COR_PROFILER` | `{918728DD-...}` | OTel profiler CLSID |
-| `OTEL_SERVICE_NAME` | `OtelSqlDemo` | Service name shown in traces |
-| `OTEL_EXPORTER_OTLP_PROTOCOL` | `http/protobuf` | gRPC is **not supported** on .NET Framework |
-| `OTEL_DOTNET_AUTO_SQLCLIENT_NETFX_ILREWRITE_ENABLED` | `true` | **Captures raw SQL query text** (not just stored procs) |
+For IIS-hosted ASP.NET apps instead of OWIN self-host:
+
+- `COR_ENABLE_PROFILING`, `COR_PROFILER*`, `OTEL_DOTNET_AUTO_HOME` must be set per Application Pool via `<environmentVariables>` in `applicationHost.config` (IIS 10+) — they **cannot** go in `Web.config`
+- Most `OTEL_*` settings can go in `Web.config` `<appSettings>`, but [not all](https://opentelemetry.io/docs/zero-code/net/configuration/#configuration-methods)
+- Each Application Pool is a separate `w3wp.exe` process with its own OTel SDK instance — **one pool = one service name**
+- If multiple apps share one pool, the first app to start sets the `OTEL_*` config for all ([source](https://github.com/open-telemetry/opentelemetry-dotnet-instrumentation/blob/main/docs/iis-instrumentation.md#configuration))
+
+## Reference Links
+
+- [Getting Started](https://opentelemetry.io/docs/zero-code/net/getting-started/) · [Configuration](https://opentelemetry.io/docs/zero-code/net/configuration/) · [Instrumentations](https://opentelemetry.io/docs/zero-code/net/instrumentations/) · [Troubleshooting](https://opentelemetry.io/docs/zero-code/net/troubleshooting/)
+- [IIS instrumentation guide](https://github.com/open-telemetry/opentelemetry-dotnet-instrumentation/blob/main/docs/iis-instrumentation.md) · [NLog logs bridge](https://github.com/open-telemetry/opentelemetry-dotnet-instrumentation/blob/main/docs/nlog-bridge.md)
 
 ## Cleanup
 
 ```powershell
-# Stop the observability stack
 docker compose down
-
-# Remove the OTel installation
 Remove-Item -Recurse -Force .\otel-dotnet-auto
-
-# Drop the LocalDB database (optional)
+# Optional: drop LocalDB database
 SqlLocalDB.exe stop MSSQLLocalDB
 SqlLocalDB.exe delete MSSQLLocalDB
 ```
