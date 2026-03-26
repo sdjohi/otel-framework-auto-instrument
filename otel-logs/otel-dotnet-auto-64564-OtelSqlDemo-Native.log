@@ -1,0 +1,80 @@
+[2026-03-26T15:12:55.018558700Z] [64564|25808] [info] OpenTelemetry CLR Profiler 1.14.1 on Windows (amd64)
+[2026-03-26T15:12:55.019693200Z] [64564|25808] [info] JIT Inlining is enabled.
+[2026-03-26T15:12:55.019765200Z] [64564|25808] [info] NGEN is disabled.
+[2026-03-26T15:12:55.019829600Z] [64564|17864] [info] Initializing ReJIT request thread.
+[2026-03-26T15:12:55.019918500Z] [64564|25808] [info] Profiler filepath: C:\Users\sd789148\repos\otel-framework-auto-instrument\otel-dotnet-auto\win-x64\OpenTelemetry.AutoInstrumentation.Native.dll
+[2026-03-26T15:12:55.020793900Z] [64564|25808] [info] Profiler attached.
+[2026-03-26T15:12:55.020912000Z] [64564|25808] [info] StackCaptureStrategyFactory: Creating NetFxStackCaptureStrategyX64
+[2026-03-26T15:12:55.021477800Z] [64564|25808] [info] 00007FFDEA51C83000007FFDEA519DA0
+[2026-03-26T15:12:55.021588400Z] [64564|25808] [info] Initialized NetFxStackCaptureStrategyX64 (per-thread suspension)
+[2026-03-26T15:12:55.039350300Z] [64564|25808] [info] COR library: mscorlib 4.0.0
+[2026-03-26T15:12:55.076147200Z] [64564|25808] [info] RedirectAssemblyReferences: redirecting [System.Diagnostics.DiagnosticSource] from_version=8.0.0.1 to_version=10.0.0.2 previous_redirects=0
+[2026-03-26T15:12:55.094134300Z] [64564|25808] [info] JITCompilationStarted: Startup hook registered in function_id=140731770424280 token=100663319 name=OtelSqlDemo.Program.Main(), assembly_name=OtelSqlDemo app_domain_id=2216206946096 domain_neutral=0
+[2026-03-26T15:12:55.124936600Z] [64564|25808] [info] ModuleLoadFinished: OpenTelemetry.AutoInstrumentation.Loader loaded into AppDomain 2216206946096 [OtelSqlDemo.exe]
+[2026-03-26T15:12:55.662260900Z] [64564|25808] [info] RedirectAssemblyReferences: redirecting [System.Diagnostics.DiagnosticSource] from_version=10.0.0.0 to_version=10.0.0.2 previous_redirects=1
+[2026-03-26T15:12:55.662373700Z] [64564|25808] [info] Rewriting PInvokes to native: C:\Users\sd789148\repos\otel-framework-auto-instrument\otel-dotnet-auto\win-x64\OpenTelemetry.AutoInstrumentation.Native.dll
+[2026-03-26T15:12:55.662638700Z] [64564|25808] [info] Rewriting pinvoke for: AddInstrumentations
+[2026-03-26T15:12:55.662666600Z] [64564|25808] [info] Rewriting pinvoke for: AddDerivedInstrumentations
+[2026-03-26T15:12:55.662688800Z] [64564|25808] [info] Rewriting pinvoke for: SetSqlClientNetFxILRewriteEnabled
+[2026-03-26T15:12:55.662709200Z] [64564|25808] [info] Rewriting pinvoke for: ConfigureContinuousProfiler
+[2026-03-26T15:12:55.662728700Z] [64564|25808] [info] Rewriting pinvoke for: ContinuousProfilerReadThreadSamples
+[2026-03-26T15:12:55.662751400Z] [64564|25808] [info] Rewriting pinvoke for: SelectiveSamplerReadThreadSamples
+[2026-03-26T15:12:55.662770900Z] [64564|25808] [info] Rewriting pinvoke for: ContinuousProfilerSetNativeContext
+[2026-03-26T15:12:55.662789900Z] [64564|25808] [info] Rewriting pinvoke for: ContinuousProfilerNotifySpanStopped
+[2026-03-26T15:12:55.662808700Z] [64564|25808] [info] Rewriting pinvoke for: SelectiveSamplingStart
+[2026-03-26T15:12:55.662827700Z] [64564|25808] [info] Rewriting pinvoke for: SelectiveSamplingStop
+[2026-03-26T15:12:55.662852500Z] [64564|25808] [info] AssemblyLoadFinished: OpenTelemetry.AutoInstrumentation was not loaded domain-neutral
+[2026-03-26T15:12:55.667746600Z] [64564|25808] [info] RedirectAssemblyReferences: redirecting [System.Diagnostics.DiagnosticSource] from_version=10.0.0.0 to_version=10.0.0.2 previous_redirects=2
+[2026-03-26T15:12:55.690843000Z] [64564|25808] [info] RedirectAssemblyReferences: redirecting [Microsoft.Extensions.Options] from_version=10.0.0.0 to_version=10.0.0.2 previous_redirects=0
+[2026-03-26T15:12:55.690887100Z] [64564|25808] [info] RedirectAssemblyReferences: redirecting [Microsoft.Extensions.Configuration.Abstractions] from_version=10.0.0.0 to_version=10.0.0.2 previous_redirects=0
+[2026-03-26T15:12:55.690904700Z] [64564|25808] [info] RedirectAssemblyReferences: redirecting [Microsoft.Extensions.Configuration] from_version=10.0.0.0 to_version=10.0.0.2 previous_redirects=0
+[2026-03-26T15:12:55.690920500Z] [64564|25808] [info] RedirectAssemblyReferences: redirecting [Microsoft.Extensions.Diagnostics.Abstractions] from_version=10.0.0.0 to_version=10.0.0.2 previous_redirects=0
+[2026-03-26T15:12:55.690997400Z] [64564|25808] [info] RedirectAssemblyReferences: redirecting [Microsoft.Extensions.DependencyInjection.Abstractions] from_version=10.0.0.0 to_version=10.0.0.2 previous_redirects=0
+[2026-03-26T15:12:55.691017200Z] [64564|25808] [info] RedirectAssemblyReferences: redirecting [Microsoft.Extensions.Logging.Abstractions] from_version=10.0.0.0 to_version=10.0.0.2 previous_redirects=0
+[2026-03-26T15:12:55.691033700Z] [64564|25808] [info] RedirectAssemblyReferences: redirecting [Microsoft.Extensions.DependencyInjection] from_version=10.0.0.0 to_version=10.0.0.2 previous_redirects=0
+[2026-03-26T15:12:55.691049700Z] [64564|25808] [info] RedirectAssemblyReferences: redirecting [System.Diagnostics.DiagnosticSource] from_version=10.0.0.0 to_version=10.0.0.2 previous_redirects=3
+[2026-03-26T15:12:55.691067900Z] [64564|25808] [info] RedirectAssemblyReferences: redirecting [Microsoft.Extensions.Logging.Configuration] from_version=10.0.0.0 to_version=10.0.0.2 previous_redirects=0
+[2026-03-26T15:12:55.691085100Z] [64564|25808] [info] RedirectAssemblyReferences: redirecting [Microsoft.Extensions.Logging] from_version=10.0.0.0 to_version=10.0.0.2 previous_redirects=0
+[2026-03-26T15:12:55.693389500Z] [64564|25808] [info] RedirectAssemblyReferences: redirecting [Microsoft.Extensions.DependencyInjection.Abstractions] from_version=10.0.0.0 to_version=10.0.0.2 previous_redirects=1
+[2026-03-26T15:12:56.014844400Z] [64564|25808] [info] RedirectAssemblyReferences: redirecting [Microsoft.Extensions.DependencyInjection.Abstractions] from_version=10.0.0.0 to_version=10.0.0.2 previous_redirects=2
+[2026-03-26T15:12:56.014932300Z] [64564|25808] [info] RedirectAssemblyReferences: redirecting [Microsoft.Extensions.Configuration.Abstractions] from_version=10.0.0.0 to_version=10.0.0.2 previous_redirects=1
+[2026-03-26T15:12:56.014971300Z] [64564|25808] [info] RedirectAssemblyReferences: redirecting [Microsoft.Extensions.Configuration.Binder] from_version=10.0.0.0 to_version=10.0.0.2 previous_redirects=0
+[2026-03-26T15:12:56.015006700Z] [64564|25808] [info] RedirectAssemblyReferences: redirecting [Microsoft.Extensions.Configuration] from_version=10.0.0.0 to_version=10.0.0.2 previous_redirects=1
+[2026-03-26T15:12:56.015042700Z] [64564|25808] [info] RedirectAssemblyReferences: redirecting [System.Diagnostics.DiagnosticSource] from_version=10.0.0.0 to_version=10.0.0.2 previous_redirects=4
+[2026-03-26T15:12:56.015074700Z] [64564|25808] [info] RedirectAssemblyReferences: redirecting [Microsoft.Extensions.Options] from_version=10.0.0.0 to_version=10.0.0.2 previous_redirects=1
+[2026-03-26T15:12:56.015151700Z] [64564|25808] [info] RedirectAssemblyReferences: redirecting [Microsoft.Extensions.Logging.Abstractions] from_version=10.0.0.0 to_version=10.0.0.2 previous_redirects=1
+[2026-03-26T15:12:56.015188700Z] [64564|25808] [info] RedirectAssemblyReferences: redirecting [Microsoft.Extensions.Options.ConfigurationExtensions] from_version=10.0.0.0 to_version=10.0.0.2 previous_redirects=0
+[2026-03-26T15:12:56.145814200Z] [64564|25808] [info] RedirectAssemblyReferences: redirecting [System.Text.Json] from_version=4.0.1.2 to_version=10.0.0.2 previous_redirects=0
+[2026-03-26T15:12:56.288181800Z] [64564|25808] [info] RedirectAssemblyReferences: redirecting [Microsoft.Extensions.DependencyInjection.Abstractions] from_version=10.0.0.0 to_version=10.0.0.2 previous_redirects=3
+[2026-03-26T15:12:56.288250900Z] [64564|25808] [info] RedirectAssemblyReferences: redirecting [Microsoft.Extensions.Configuration.Abstractions] from_version=10.0.0.0 to_version=10.0.0.2 previous_redirects=2
+[2026-03-26T15:12:56.288268700Z] [64564|25808] [info] RedirectAssemblyReferences: redirecting [Microsoft.Extensions.Options] from_version=10.0.0.0 to_version=10.0.0.2 previous_redirects=2
+[2026-03-26T15:12:56.288284200Z] [64564|25808] [info] RedirectAssemblyReferences: redirecting [Microsoft.Extensions.Configuration] from_version=10.0.0.0 to_version=10.0.0.2 previous_redirects=2
+[2026-03-26T15:12:56.288350500Z] [64564|25808] [info] RedirectAssemblyReferences: redirecting [System.Diagnostics.DiagnosticSource] from_version=10.0.0.0 to_version=10.0.0.2 previous_redirects=5
+[2026-03-26T15:12:56.551438400Z] [64564|25808] [info] RedirectAssemblyReferences: redirecting [System.Diagnostics.DiagnosticSource] from_version=10.0.0.0 to_version=10.0.0.2 previous_redirects=6
+[2026-03-26T15:12:56.558626600Z] [64564|25808] [info] RedirectAssemblyReferences: redirecting [System.Diagnostics.DiagnosticSource] from_version=10.0.0.0 to_version=10.0.0.2 previous_redirects=7
+[2026-03-26T15:12:56.558670400Z] [64564|25808] [info] RedirectAssemblyReferences: redirecting [System.Memory] from_version=4.0.2.0 to_version=4.0.5.0 previous_redirects=0
+[2026-03-26T15:12:56.638362100Z] [64564|25808] [info] AddInstrumentations: received id: FFAFA5168C4F4718B40CA8788875C2DA from managed side with 50 integrations.
+[2026-03-26T15:12:56.638789800Z] [64564|25808] [info] Total number of modules to analyze: 35
+[2026-03-26T15:12:56.639025900Z] [64564|17864] [info] ReJIT handler stored metadata for 140731770424696 NLog AppDomain 2216206946096 OtelSqlDemo.exe
+[2026-03-26T15:12:56.639805700Z] [64564|17864] [info] Request ReJIT done for 2 methods
+[2026-03-26T15:12:56.639892200Z] [64564|25808] [info] InternalAddInstrumentation: Total integrations in profiler: 50
+[2026-03-26T15:12:56.643831400Z] [64564|25808] [info] AddDerivedInstrumentations: received id: 61BF627FA9B5477F85595A9F0D68B29C from managed side with 4 integrations.
+[2026-03-26T15:12:56.643887200Z] [64564|25808] [info] Total number of modules to analyze: 35
+[2026-03-26T15:12:56.644443100Z] [64564|25808] [info] InternalAddInstrumentation: Total integrations in profiler: 54
+[2026-03-26T15:12:56.876266800Z] [64564|25808] [info] *** CallTarget_RewriterCallback() Finished: NLog.Logger.WriteToTargets() [IsVoid=1, IsStatic=0, IntegrationType=OpenTelemetry.AutoInstrumentation.Instrumentations.NLog.TraceContextInjection.Integrations.NLogWriteToTargetsIntegration, Arguments=2]
+[2026-03-26T15:12:57.188905800Z] [64564|25808] [info] RedirectAssemblyReferences: redirecting [Microsoft.Extensions.Configuration.Abstractions] from_version=10.0.0.0 to_version=10.0.0.2 previous_redirects=3
+[2026-03-26T15:12:57.188952300Z] [64564|25808] [info] RedirectAssemblyReferences: redirecting [Microsoft.Extensions.Configuration] from_version=10.0.0.0 to_version=10.0.0.2 previous_redirects=3
+[2026-03-26T15:12:57.188968600Z] [64564|25808] [info] RedirectAssemblyReferences: redirecting [System.Diagnostics.DiagnosticSource] from_version=10.0.0.0 to_version=10.0.0.2 previous_redirects=8
+[2026-03-26T15:12:57.188983800Z] [64564|25808] [info] RedirectAssemblyReferences: redirecting [Microsoft.Extensions.DependencyInjection.Abstractions] from_version=10.0.0.0 to_version=10.0.0.2 previous_redirects=4
+[2026-03-26T15:12:57.188998300Z] [64564|25808] [info] RedirectAssemblyReferences: redirecting [Microsoft.Extensions.Options] from_version=10.0.0.0 to_version=10.0.0.2 previous_redirects=3
+[2026-03-26T15:12:57.999161700Z] [64564|25808] [info] RedirectAssemblyReferences: redirecting [Microsoft.Extensions.DependencyInjection.Abstractions] from_version=10.0.0.0 to_version=10.0.0.2 previous_redirects=5
+[2026-03-26T15:12:57.999209400Z] [64564|25808] [info] RedirectAssemblyReferences: redirecting [Microsoft.Extensions.Configuration.Abstractions] from_version=10.0.0.0 to_version=10.0.0.2 previous_redirects=4
+[2026-03-26T15:12:57.999225900Z] [64564|25808] [info] RedirectAssemblyReferences: redirecting [Microsoft.Extensions.Options] from_version=10.0.0.0 to_version=10.0.0.2 previous_redirects=4
+[2026-03-26T15:12:57.999240500Z] [64564|25808] [info] RedirectAssemblyReferences: redirecting [Microsoft.Extensions.Configuration] from_version=10.0.0.0 to_version=10.0.0.2 previous_redirects=4
+[2026-03-26T15:12:57.999255100Z] [64564|25808] [info] RedirectAssemblyReferences: redirecting [System.Diagnostics.DiagnosticSource] from_version=10.0.0.0 to_version=10.0.0.2 previous_redirects=9
+[2026-03-26T15:12:58.007376200Z] [64564|17864] [info] ReJIT handler stored metadata for 140731788161800 System.Web AppDomain 2216206946096 OtelSqlDemo.exe
+[2026-03-26T15:12:58.007486200Z] [64564|17864] [info] Request ReJIT done for 1 methods
+[2026-03-26T15:12:58.014461800Z] [64564|25808] [info] RedirectAssemblyReferences: redirecting [System.Diagnostics.DiagnosticSource] from_version=10.0.0.0 to_version=10.0.0.2 previous_redirects=10
+[2026-03-26T15:12:58.021982800Z] [64564|25808] [info] RedirectAssemblyReferences: redirecting [System.Memory] from_version=4.0.1.2 to_version=4.0.5.0 previous_redirects=1
+[2026-03-26T15:12:58.022024100Z] [64564|25808] [info] RedirectAssemblyReferences: redirecting [System.Threading.Tasks.Extensions] from_version=4.2.0.1 to_version=4.2.4.0 previous_redirects=0
+[2026-03-26T15:12:58.022042500Z] [64564|25808] [info] RedirectAssemblyReferences: redirecting [System.Buffers] from_version=4.0.3.0 to_version=4.0.5.0 previous_redirects=0

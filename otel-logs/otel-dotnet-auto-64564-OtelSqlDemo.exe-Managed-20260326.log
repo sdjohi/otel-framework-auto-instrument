@@ -1,0 +1,56 @@
+[2026-03-26T15:12:56.5134604Z] [Information] OpenTelemetry tracer initialized. 
+[2026-03-26T15:12:56.5336861Z] [Information] EventSource=OpenTelemetry-AutoInstrumentation, Message=OpenTelemetry tracer initialized. 
+[2026-03-26T15:12:56.6218564Z] [Information] OpenTelemetry meter initialized. 
+[2026-03-26T15:12:56.6228632Z] [Information] EventSource=OpenTelemetry-AutoInstrumentation, Message=OpenTelemetry meter initialized. 
+[2026-03-26T15:12:56.6385814Z] [Information] The profiler has been initialized with 50 direct definitions for FFAFA5168C4F4718B40CA8788875C2DA. 
+[2026-03-26T15:12:56.6385814Z] [Information] EventSource=OpenTelemetry-AutoInstrumentation, Message=The profiler has been initialized with 50 direct definitions for FFAFA5168C4F4718B40CA8788875C2DA. 
+[2026-03-26T15:12:56.6433731Z] [Information] The profiler has been initialized with 4 derived definitions for 61BF627FA9B5477F85595A9F0D68B29C. 
+[2026-03-26T15:12:56.6433731Z] [Information] EventSource=OpenTelemetry-AutoInstrumentation, Message=The profiler has been initialized with 4 derived definitions for 61BF627FA9B5477F85595A9F0D68B29C. 
+[2026-03-26T15:12:57.0023572Z] [Information] OpenTelemetry logger provider initialized. 
+[2026-03-26T15:12:57.0023572Z] [Information] EventSource=OpenTelemetry-AutoInstrumentation, Message=OpenTelemetry logger provider initialized. 
+[2026-03-26T15:13:01.6503909Z] [Warning] EventSource=OpenTelemetry-Api, Message=Failed to inject activity context in format: 'TraceContextPropagator', context: 'Invalid context'. 
+[2026-03-26T15:13:01.7615894Z] [Information] EventSource=OpenTelemetry-Exporter-OpenTelemetryProtocol, Message=Export succeeded for http://127.0.0.1:4318/v1/traces. Message: Export completed successfully. 
+[2026-03-26T15:13:02.0282401Z] [Warning] EventSource=OpenTelemetry-Api, Message=Failed to inject activity context in format: 'TraceContextPropagator', context: 'Invalid context'. 
+[2026-03-26T15:13:02.0330161Z] [Information] EventSource=OpenTelemetry-Exporter-OpenTelemetryProtocol, Message=Export succeeded for http://127.0.0.1:4318/v1/logs. Message: Export completed successfully. 
+[2026-03-26T15:13:06.7647935Z] [Warning] EventSource=OpenTelemetry-Api, Message=Failed to inject activity context in format: 'TraceContextPropagator', context: 'Invalid context'. 
+[2026-03-26T15:13:06.7681039Z] [Information] EventSource=OpenTelemetry-Exporter-OpenTelemetryProtocol, Message=Export succeeded for http://127.0.0.1:4318/v1/traces. Message: Export completed successfully. 
+[2026-03-26T15:13:07.0393841Z] [Warning] EventSource=OpenTelemetry-Api, Message=Failed to inject activity context in format: 'TraceContextPropagator', context: 'Invalid context'. 
+[2026-03-26T15:13:07.0405689Z] [Information] EventSource=OpenTelemetry-Exporter-OpenTelemetryProtocol, Message=Export succeeded for http://127.0.0.1:4318/v1/logs. Message: Export completed successfully. 
+[2026-03-26T15:13:11.7714198Z] [Warning] EventSource=OpenTelemetry-Api, Message=Failed to inject activity context in format: 'TraceContextPropagator', context: 'Invalid context'. 
+[2026-03-26T15:13:11.7734552Z] [Information] EventSource=OpenTelemetry-Exporter-OpenTelemetryProtocol, Message=Export succeeded for http://127.0.0.1:4318/v1/traces. Message: Export completed successfully. 
+[2026-03-26T15:13:12.0511090Z] [Warning] EventSource=OpenTelemetry-Api, Message=Failed to inject activity context in format: 'TraceContextPropagator', context: 'Invalid context'. 
+[2026-03-26T15:13:12.0517320Z] [Information] EventSource=OpenTelemetry-Exporter-OpenTelemetryProtocol, Message=Export succeeded for http://127.0.0.1:4318/v1/logs. Message: Export completed successfully. 
+[2026-03-26T15:13:56.6981567Z] [Warning] EventSource=OpenTelemetry-Api, Message=Failed to inject activity context in format: 'TraceContextPropagator', context: 'Invalid context'. 
+[2026-03-26T15:13:56.7021590Z] [Information] EventSource=OpenTelemetry-Exporter-OpenTelemetryProtocol, Message=Export succeeded for http://127.0.0.1:4318/v1/metrics. Message: Export completed successfully. 
+[2026-03-26T15:14:06.8273870Z] [Warning] EventSource=OpenTelemetry-Api, Message=Failed to inject activity context in format: 'TraceContextPropagator', context: 'Invalid context'. 
+[2026-03-26T15:14:06.8296294Z] [Information] EventSource=OpenTelemetry-Exporter-OpenTelemetryProtocol, Message=Export succeeded for http://127.0.0.1:4318/v1/traces. Message: Export completed successfully. 
+[2026-03-26T15:14:07.0953513Z] [Warning] EventSource=OpenTelemetry-Api, Message=Failed to inject activity context in format: 'TraceContextPropagator', context: 'Invalid context'. 
+[2026-03-26T15:14:07.0966773Z] [Information] EventSource=OpenTelemetry-Exporter-OpenTelemetryProtocol, Message=Export succeeded for http://127.0.0.1:4318/v1/logs. Message: Export completed successfully. 
+[2026-03-26T15:14:11.8404627Z] [Warning] EventSource=OpenTelemetry-Api, Message=Failed to inject activity context in format: 'TraceContextPropagator', context: 'Invalid context'. 
+[2026-03-26T15:14:11.8454643Z] [Information] EventSource=OpenTelemetry-Exporter-OpenTelemetryProtocol, Message=Export succeeded for http://127.0.0.1:4318/v1/traces. Message: Export completed successfully. 
+[2026-03-26T15:14:12.0992298Z] [Warning] EventSource=OpenTelemetry-Api, Message=Failed to inject activity context in format: 'TraceContextPropagator', context: 'Invalid context'. 
+[2026-03-26T15:14:12.1018234Z] [Information] EventSource=OpenTelemetry-Exporter-OpenTelemetryProtocol, Message=Export succeeded for http://127.0.0.1:4318/v1/logs. Message: Export completed successfully. 
+[2026-03-26T15:14:36.8703995Z] [Warning] EventSource=OpenTelemetry-Api, Message=Failed to inject activity context in format: 'TraceContextPropagator', context: 'Invalid context'. 
+[2026-03-26T15:14:36.8732001Z] [Information] EventSource=OpenTelemetry-Exporter-OpenTelemetryProtocol, Message=Export succeeded for http://127.0.0.1:4318/v1/traces. Message: Export completed successfully. 
+[2026-03-26T15:14:37.1210852Z] [Warning] EventSource=OpenTelemetry-Api, Message=Failed to inject activity context in format: 'TraceContextPropagator', context: 'Invalid context'. 
+[2026-03-26T15:14:37.1228144Z] [Information] EventSource=OpenTelemetry-Exporter-OpenTelemetryProtocol, Message=Export succeeded for http://127.0.0.1:4318/v1/logs. Message: Export completed successfully. 
+[2026-03-26T15:14:41.8781496Z] [Warning] EventSource=OpenTelemetry-Api, Message=Failed to inject activity context in format: 'TraceContextPropagator', context: 'Invalid context'. 
+[2026-03-26T15:14:41.8830737Z] [Information] EventSource=OpenTelemetry-Exporter-OpenTelemetryProtocol, Message=Export succeeded for http://127.0.0.1:4318/v1/traces. Message: Export completed successfully. 
+[2026-03-26T15:14:42.1253500Z] [Warning] EventSource=OpenTelemetry-Api, Message=Failed to inject activity context in format: 'TraceContextPropagator', context: 'Invalid context'. 
+[2026-03-26T15:14:42.1273529Z] [Information] EventSource=OpenTelemetry-Exporter-OpenTelemetryProtocol, Message=Export succeeded for http://127.0.0.1:4318/v1/logs. Message: Export completed successfully. 
+[2026-03-26T15:14:56.6331297Z] [Warning] EventSource=OpenTelemetry-Api, Message=Failed to inject activity context in format: 'TraceContextPropagator', context: 'Invalid context'. 
+[2026-03-26T15:14:56.6368885Z] [Information] EventSource=OpenTelemetry-Exporter-OpenTelemetryProtocol, Message=Export succeeded for http://127.0.0.1:4318/v1/metrics. Message: Export completed successfully. 
+[2026-03-26T15:15:56.6347092Z] [Warning] EventSource=OpenTelemetry-Api, Message=Failed to inject activity context in format: 'TraceContextPropagator', context: 'Invalid context'. 
+[2026-03-26T15:15:56.6376130Z] [Information] EventSource=OpenTelemetry-Exporter-OpenTelemetryProtocol, Message=Export succeeded for http://127.0.0.1:4318/v1/metrics. Message: Export completed successfully. 
+[2026-03-26T15:16:56.6418981Z] [Warning] EventSource=OpenTelemetry-Api, Message=Failed to inject activity context in format: 'TraceContextPropagator', context: 'Invalid context'. 
+[2026-03-26T15:16:56.6507351Z] [Information] EventSource=OpenTelemetry-Exporter-OpenTelemetryProtocol, Message=Export succeeded for http://127.0.0.1:4318/v1/metrics. Message: Export completed successfully. 
+[2026-03-26T15:17:56.6658325Z] [Warning] EventSource=OpenTelemetry-Api, Message=Failed to inject activity context in format: 'TraceContextPropagator', context: 'Invalid context'. 
+[2026-03-26T15:17:56.6698182Z] [Information] EventSource=OpenTelemetry-Exporter-OpenTelemetryProtocol, Message=Export succeeded for http://127.0.0.1:4318/v1/metrics. Message: Export completed successfully. 
+[2026-03-26T15:18:56.6211924Z] [Warning] EventSource=OpenTelemetry-Api, Message=Failed to inject activity context in format: 'TraceContextPropagator', context: 'Invalid context'. 
+[2026-03-26T15:18:56.6341057Z] [Information] EventSource=OpenTelemetry-Exporter-OpenTelemetryProtocol, Message=Export succeeded for http://127.0.0.1:4318/v1/metrics. Message: Export completed successfully. 
+[2026-03-26T15:19:56.6475888Z] [Warning] EventSource=OpenTelemetry-Api, Message=Failed to inject activity context in format: 'TraceContextPropagator', context: 'Invalid context'. 
+[2026-03-26T15:19:56.6508255Z] [Information] EventSource=OpenTelemetry-Exporter-OpenTelemetryProtocol, Message=Export succeeded for http://127.0.0.1:4318/v1/metrics. Message: Export completed successfully. 
+[2026-03-26T15:20:56.6560003Z] [Warning] EventSource=OpenTelemetry-Api, Message=Failed to inject activity context in format: 'TraceContextPropagator', context: 'Invalid context'. 
+[2026-03-26T15:20:56.6584616Z] [Information] EventSource=OpenTelemetry-Exporter-OpenTelemetryProtocol, Message=Export succeeded for http://127.0.0.1:4318/v1/metrics. Message: Export completed successfully. 
+[2026-03-26T15:21:56.6538425Z] [Warning] EventSource=OpenTelemetry-Api, Message=Failed to inject activity context in format: 'TraceContextPropagator', context: 'Invalid context'. 
+[2026-03-26T15:21:56.6563701Z] [Information] EventSource=OpenTelemetry-Exporter-OpenTelemetryProtocol, Message=Export succeeded for http://127.0.0.1:4318/v1/metrics. Message: Export completed successfully. 

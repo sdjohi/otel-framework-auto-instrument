@@ -1,0 +1,15 @@
+[2026-03-26T15:09:47.5643810Z] [Information] OpenTelemetry tracer initialized. 
+[2026-03-26T15:09:47.5943706Z] [Information] EventSource=OpenTelemetry-AutoInstrumentation, Message=OpenTelemetry tracer initialized. 
+[2026-03-26T15:09:47.6839296Z] [Information] OpenTelemetry meter initialized. 
+[2026-03-26T15:09:47.6839296Z] [Information] EventSource=OpenTelemetry-AutoInstrumentation, Message=OpenTelemetry meter initialized. 
+[2026-03-26T15:09:47.6969320Z] [Information] The profiler has been initialized with 50 direct definitions for FFAFA5168C4F4718B40CA8788875C2DA. 
+[2026-03-26T15:09:47.6969320Z] [Information] EventSource=OpenTelemetry-AutoInstrumentation, Message=The profiler has been initialized with 50 direct definitions for FFAFA5168C4F4718B40CA8788875C2DA. 
+[2026-03-26T15:09:47.6969320Z] [Information] The profiler has been initialized with 4 derived definitions for 61BF627FA9B5477F85595A9F0D68B29C. 
+[2026-03-26T15:09:47.6969320Z] [Information] EventSource=OpenTelemetry-AutoInstrumentation, Message=The profiler has been initialized with 4 derived definitions for 61BF627FA9B5477F85595A9F0D68B29C. 
+[2026-03-26T15:09:48.0625285Z] [Information] OpenTelemetry logger provider initialized. 
+[2026-03-26T15:09:48.0625285Z] [Information] EventSource=OpenTelemetry-AutoInstrumentation, Message=OpenTelemetry logger provider initialized. 
+[2026-03-26T15:09:52.8179121Z] [Warning] EventSource=OpenTelemetry-Api, Message=Failed to inject activity context in format: 'TraceContextPropagator', context: 'Invalid context'. 
+[2026-03-26T15:09:52.9935776Z] [Information] EventSource=OpenTelemetry-Exporter-OpenTelemetryProtocol, Message=Export succeeded for http://127.0.0.1:4318/v1/traces. Message: Export completed successfully. 
+[2026-03-26T15:09:53.0953906Z] [Warning] EventSource=OpenTelemetry-Api, Message=Failed to inject activity context in format: 'TraceContextPropagator', context: 'Invalid context'. 
+[2026-03-26T15:09:53.1016324Z] [Information] EventSource=OpenTelemetry-Exporter-OpenTelemetryProtocol, Message=Export succeeded for http://127.0.0.1:4318/v1/logs. Message: Export completed successfully. 
+[2026-03-26T15:10:19.2656623Z] [Information] OpenTelemetry Automatic Instrumentation exit. 

@@ -1,0 +1,6 @@
+bin/
+obj/
+otel-dotnet-auto/
+otel-dotnet-auto-windows.zip
+*.user
+.vs/
